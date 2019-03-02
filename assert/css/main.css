@@ -83,7 +83,7 @@ body:before {
     content: '';
     background-repeat: no-repeat;
     background-position: center;
-    opacity: 0.05;
+    opacity: 0.12;
     position: fixed;
     top: 0;
     left: 0;
@@ -177,7 +177,7 @@ img {
     box-shadow: 0 2px 15px 0px rgba(0,0,0,0.1);
 }
 blockquote {
-    font-size: 12px;
+    font-size: 13px;
     display: block;
     border-width: 1px 0;
     border-style: solid;
@@ -726,6 +726,7 @@ blockquote ul, blockquote ol {
 .post-copyright {
     margin: 2em 0 0;
     padding: 0.5em 1em;
-   /* border-left: 3px solid #ff1700;*/
+    border-left: 3px solid #ff9ece;  /*#414141*/
+    background-color: rgba(65,65,65,0.05);
     list-style: none;
 }
