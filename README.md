@@ -1,20 +1,32 @@
 ### Story+
 
+在原主题基础上进行修改，该项目将持续跟进。
+
 添加内容:
 
 - 版权信息
-- 随机动漫背景图(api由保罗提供)
 - 网站运行时间
-- 网站shortcut_ico(修改请到config.php)
-- CSS修改
-- 网站标题快速修改 (修改请到config.php)
+- 网站shortcut_ico
+- 网站标题快速修改
 - 一言已增加(api来自https://uixsj.cn/1143.html)
 - 增加服务器运行时间(PHP实现静态显示),可选择JS实现(动态显示)
-- etc.
+- 增加主题设置页面，可根据自我需要开启和关闭功能。
+- more
+
+修改内容
+
+- 修改了原主题的背景图透明度
+- 修改了原主题的引用字体大小，一级二级标题大小
+- 删除了config.php
+
+![image-20190302182818344](https://ws3.sinaimg.cn/large/006tKfTcly1g0ommil1e3j30vy0ikmz8.jpg)
+
+![image-20190302182832490](https://ws1.sinaimg.cn/large/006tKfTcly1g0ommdsx7rj30vy0ik75l.jpg)
 
 Demo：[静かな森](https://shizuri.net/)
 
-**以下为作者原文**
+
+### 原作者Readme
 -----------
 
 每个人都有属于自已的故事，我们编织着、叙述着，只为了那个必定动人的结局。
