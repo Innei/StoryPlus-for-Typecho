@@ -117,8 +117,10 @@ if ($this->options->style_BG) {
                                         <input autocomplete="off" type="text" name="s" id="menu-search" placeholder="Type something~" />
                                     </form>
                                 </div><br />
+                                <?php if($this->options->hitokoto == 'on'):?>
                                 <script src="<?php $this->options->themeUrl('assert/js/hitokoto.js') ?>"></script>
-                                <script type="text/javascript" src="https://api.uixsj.cn/hitokoto/en.php?code=js"></script><script>enhitokoto()</script>                        
+                                <script type="text/javascript" src="https://api.uixsj.cn/hitokoto/en.php?code=js"></script><script>enhitokoto()</script>
+                                <?php endif;?>                    
                             </div>
                         </div>
                     </div>

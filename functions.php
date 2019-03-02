@@ -37,6 +37,20 @@ function themeConfig($form) {
         ),
         'JS', _t('网站显示运行时间设置'), _t('PHP为显示服务器运行时间,JS为自定义时间'));
     $form->addInput($runtime);
+
+    $hitokoto = new Typecho_Widget_Helper_Form_Element_Radio('hitokoto',
+        array('on' => _t('显示'),
+            'off' => _t('不显示'),
+        ),
+        'off', _t('显示一言'), _t('在标题栏下方显示一言'));
+    $form->addInput($hitokoto);
+
+    $copyright = new Typecho_Widget_Helper_Form_Element_Radio('copyright',
+        array('on' => _t('显示'),
+            'off' => _t('不显示'),
+        ),
+        'off', _t('显示版权信息'), _t('在文章下方显示版权信息'));
+    $form->addInput($copyright);
 }
 
 function parseContnet($content){ //解析文章 暂只是添加h3,h4锚点,为 <img> 添加 data-action

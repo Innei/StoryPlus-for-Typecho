@@ -13,6 +13,7 @@
                 <div class="post-content" itemprop="articleBody">
                     <?php parseContnet($this->content); ?>
                 </div>
+                <?php if($this->options->copyright == 'on'):?>
                 <div>
                     <ul class="post-copyright">
                       <li>
@@ -31,6 +32,7 @@
                     </li>
                 </ul>
             </div>
+        <?php endif ;?>
             <div style="display:block;margin-bottom:2em;" class="clearfix">
                 <section style="float:left;">
                     <span itemprop="keywords" class="tags"><?php _e('tag(s): '); ?><?php $this->tags(', ', true, 'none'); ?></span>
