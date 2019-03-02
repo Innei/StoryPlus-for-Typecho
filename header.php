@@ -2,11 +2,21 @@
 <?php require_once 'functions.php'; ?>
 <!DOCTYPE HTML>
 <?php
-require_once 'config.php';
+require_once 'config.php';/*
 if ($GLOBALS['style_BG'] != '') {
     echo '<style>';
     echo "\n";
     echo 'body{background: #fff;}body::before {background: url('.$GLOBALS['style_BG'].') center/cover no-repeat;}blockquote::before {background: transparent !important;}';
+    echo "\n";
+    echo '</style>';
+    echo "\n";
+}*/
+if ($this->options->style_BG) {
+    echo '<style>';
+    echo "\n";
+    echo 'body{background: #fff;}body::before {background: url(\'';
+    $this->options->style_BG();
+    echo '\') center/cover no-repeat;}blockquote::before {background: transparent !important;}';
     echo "\n";
     echo '</style>';
     echo "\n";
@@ -18,7 +28,9 @@ if ($GLOBALS['style_BG'] != '') {
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="shortcut icon" href="<?php echo $GLOBALS['shortcut_ico'] ?>"type="image/x-icon" />
+    <link rel="shortcut icon" href="
+    <?php if($this->options->shortcut_ico){$this->options->shortcut_ico();}?>"type="image/x-icon" />
+    <?php Typecho_Plugin::factory('PaceJs')->render(); ?>
     <title><?php $this->archiveTitle(array(
         'category'  =>  _t('%s'),
         'search'    =>  _t('%s'),

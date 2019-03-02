@@ -7,11 +7,12 @@
             <div class="col-12">
                 &copy; <?php echo date('Y'); ?> <a href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title(); ?></a>.
                 <?php _e('Using <a target="_blank" href="http://www.typecho.org">Typecho</a> & <a target="_blank" href="https://github.com/SorashitaInnei/StoryPlus-for-Typecho">Story+</a>'); ?>.
-                <?php 
-                if($GLOBALS['RUNTIME'] == 'JS')
+                <?php
+                
+                if($this->options->runtime == 'JS')
                 {   ?><script src="<?php $this->options->themeUrl('assert/js/extra.js');?>"></script><?php
                     echo '<p>本站已萌萌哒运行了 <span id="span_dt_dt"></span></p>';}
-                elseif($GLOBALS['RUNTIME'] == 'PHP')
+                elseif($this->options->runtime == 'PHP')
                 {$this->need('time.php');}
 
              ?>

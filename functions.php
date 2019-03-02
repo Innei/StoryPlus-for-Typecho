@@ -1,5 +1,25 @@
 <?php
 ini_set("error_reporting","E_ALL & ~E_NOTICE");
+
+function themeConfig($form) {
+	$runtime = new Typecho_Widget_Helper_Form_Element_Radio('runtime',
+        array('PHP' => _t('PHP显示'),
+            'JS' => _t('JS显示'),
+            'NONE' => _t('不显示'),
+        ),
+        'JS', _t('网站显示运行时间设置'), _t('PHP为显示服务器运行时间,JS为自定义时间'));
+    $form->addInput($runtime);
+
+    $style_BG = new Typecho_Widget_Helper_Form_Element_Text('style_BG', NULL, NULL, _t('背景图设置'), _t('填入图片 URL 地址，留空为关闭, 一般为http://www.yourblog.com/image.png,支持 https:// 或 //'));
+    $form->addInput($style_BG);
+
+    $shortcut_ico = new Typecho_Widget_Helper_Form_Element_Text('shortcut_ico', NULL, NULL, _t('favicon设置'), _t('填写网站图标地址，留空为关闭, 一般为http://www.yourblog.com/image.png,支持 https:// 或 //'));
+    $form->addInput($shortcut_ico);
+
+    $NAME = new Typecho_Widget_Helper_Form_Element_Text('NAME', 'innei', NULL, _t('网页标题设置'), _t('支持5个字符'));
+    $form->addInput($NAME);
+}
+
 function parseContnet($content){ //解析文章 暂只是添加h3,h4锚点,为 <img> 添加 data-action
     //添加导航树
     $torHTML=post_tor($content);
