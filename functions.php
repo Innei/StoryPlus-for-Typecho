@@ -2,22 +2,41 @@
 ini_set("error_reporting","E_ALL & ~E_NOTICE");
 
 function themeConfig($form) {
-	$runtime = new Typecho_Widget_Helper_Form_Element_Radio('runtime',
+
+    $style_BG = new Typecho_Widget_Helper_Form_Element_Text('style_BG', NULL, NULL, _t('背景图设置'), _t('填入图片 URL 地址，留空为关闭, 一般为http://www.yourblog.com/image.png,支持 https:// 或 //'));
+    $form->addInput($style_BG->addRule('xssCheck', _t('请不要在图片链接中使用特殊字符')));
+
+    $shortcut_ico = new Typecho_Widget_Helper_Form_Element_Text('shortcut_ico', NULL, NULL, _t('favicon设置'), _t('填写网站图标地址，留空为关闭, 一般为http://www.yourblog.com/image.png,支持 https:// 或 //'));
+    $form->addInput($shortcut_ico->addRule('xssCheck', _t('请不要在图片链接中使用特殊字符')));
+
+    $NAME = new Typecho_Widget_Helper_Form_Element_Text('NAME', NULL, NULL, _t('网页标题设置'), _t('仅支持5个字符, 多了会省略, 少了会空白, 默认为INNEI, 请参考原主题修改大于5个字符'));
+    $form->addInput($NAME);
+
+    $isRSS = new Typecho_Widget_Helper_Form_Element_Radio('isRSS', 
+    	array('on' => _t('显示'),
+    		'off' => _t('隐藏')),
+    	'off', _t('显示RSS'),_t('在菜单栏中加入 RSS 按钮'));
+    $form->addInput($isRSS);  
+
+    $isAutoNav = new Typecho_Widget_Helper_Form_Element_Radio('isAutoNav',
+      array('on' => _t('开启'),
+    		'off' => _t('关闭')),
+    	'on', _t('自动调整'),_t('自动设置导航栏中 margin 及 width 值（推荐开启）'));
+    $form->addInput($isAutoNav);
+
+    $isIconNav = new Typecho_Widget_Helper_Form_Element_Radio('isIconNav',
+      array('on' => _t('开启'),
+    		'off' => _t('关闭')),
+    	'on', _t('替换表情'),_t('将导航栏中的 1,2,3 替换成 Emoji 图标'));
+    $form->addInput($isIconNav);
+
+    $runtime = new Typecho_Widget_Helper_Form_Element_Radio('runtime',
         array('PHP' => _t('PHP显示'),
             'JS' => _t('JS显示'),
             'NONE' => _t('不显示'),
         ),
         'JS', _t('网站显示运行时间设置'), _t('PHP为显示服务器运行时间,JS为自定义时间'));
     $form->addInput($runtime);
-
-    $style_BG = new Typecho_Widget_Helper_Form_Element_Text('style_BG', NULL, NULL, _t('背景图设置'), _t('填入图片 URL 地址，留空为关闭, 一般为http://www.yourblog.com/image.png,支持 https:// 或 //'));
-    $form->addInput($style_BG);
-
-    $shortcut_ico = new Typecho_Widget_Helper_Form_Element_Text('shortcut_ico', NULL, NULL, _t('favicon设置'), _t('填写网站图标地址，留空为关闭, 一般为http://www.yourblog.com/image.png,支持 https:// 或 //'));
-    $form->addInput($shortcut_ico);
-
-    $NAME = new Typecho_Widget_Helper_Form_Element_Text('NAME', 'innei', NULL, _t('网页标题设置'), _t('支持5个字符'));
-    $form->addInput($NAME);
 }
 
 function parseContnet($content){ //解析文章 暂只是添加h3,h4锚点,为 <img> 添加 data-action

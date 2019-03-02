@@ -26,7 +26,7 @@
 <script src="<?php $this->options->themeUrl('assert/js/zoom-vanilla.min.js'); ?>"></script>
 <script>
     window.onload=function(){
-        <?php if($GLOBALS['isAutoNav'] == 'on'): ?>
+        <?php if($this->options->isAutoNav == 'on'): ?>
             var b = document.getElementsByClassName('b');
             var w =  document.getElementsByClassName('w');
             var menupgMargin = (b.length+w.length)*28;
