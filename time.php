@@ -19,4 +19,4 @@ function sysInfo()
     echo "</br>本站已萌萌哒运行了".$sysInfo['uptime'];
     
 }
-?>       
+?> 

@@ -367,7 +367,7 @@ blockquote ul, blockquote ol {
     margin: 2em 0 2em 2em;
 }
 .posti ul li {
-    list-style: square;
+    /*list-style: circle;*/
 }
 .posti .a_tag {
     display: flow-root;
@@ -729,4 +729,5 @@ blockquote ul, blockquote ol {
     border-left: 3px solid #ff9ece;  /*#414141*/
     background-color: rgba(65,65,65,0.05);
     list-style: none;
+    
 }
