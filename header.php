@@ -118,7 +118,7 @@ if ($this->options->style_BG) {
                                     </form>
                                 </div><br />
                                 <?php if($this->options->hitokoto == 'on'):?>
-                                <script type="text/javascript" src="https://api.uixsj.cn/hitokoto/en.php?code=js"></script><script>enhitokoto()</script>
+                                <?php $this->need('hitokoto.php') ?>
                                 <?php endif;?>                    
                             </div>
                         </div>
