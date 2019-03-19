@@ -731,3 +731,25 @@ blockquote ul, blockquote ol {
     list-style: none;
     
 }
+.post-link .post-dec {
+	width: 230px;
+	height: 200px;
+	position: relative;
+	overflow: hidden;
+	opacity: 0;
+}
+.post-link .post-dec p {
+	width: 100px;
+    height: 200px; 
+    position: absolute;
+    top: 0px;
+    filter: Alpha(opacity=80);
+    -moz-opacity: 0.8; 
+    opacity: 0.8; 
+    padding: 20px; 
+    -webkit-transition: left 3s ease;
+}
+.post-link .post-dec:hover {
+	opacity: 1;
+	transition: opacity 2s;
+}

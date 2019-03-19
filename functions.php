@@ -44,7 +44,13 @@ function themeConfig($form) {
         ),
         'off', _t('显示一言'), _t('在标题栏下方显示一言'));
     $form->addInput($hitokoto);
-
+	
+	$showDec = new Typecho_Widget_Helper_Form_Element_Radio('showDec', 
+    	array('on' => _t('显示'),
+    		'off' => _t('隐藏')),
+    	'off', _t('显示文章概要'),_t('鼠标悬停标题框出现概要'));
+    $form->addInput($showDec);  
+	
     $copyright = new Typecho_Widget_Helper_Form_Element_Radio('copyright',
         array('on' => _t('显示'),
             'off' => _t('不显示'),
