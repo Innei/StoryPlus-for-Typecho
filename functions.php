@@ -64,6 +64,13 @@ function themeConfig($form) {
 		),
 		'on', _t('显示长时间未修改的读者通知'), _t('如超过30天未修改在文章标题下方显示长时间未修改通知'));
 	$form->addInput($modifiedDate);
+
+	$showCommentNum = new Typecho_Widget_Helper_Form_Element_Radio('showCommentNum',
+		array('on' => _t('显示'),
+			'off' => _t('不显示'),
+		),
+		'on', _t('显示评论数'), _t(''));
+	$form->addInput($showCommentNum);
 }
 
 function parseContnet($content){ //解析文章 暂只是添加h3,h4锚点,为 <img> 添加 data-action
@@ -140,5 +147,32 @@ function post_tor($content){
 	} else {
 		return $f;
 	}
+}
+function get_post_view($archive)
+{
+	$cid    = $archive->cid;
+	$db     = Typecho_Db::get();
+	$prefix = $db->getPrefix();
+	if (!array_key_exists('views', $db->fetchRow($db->select()->from('table.contents')))) {
+		$db->query('ALTER TABLE `' . $prefix . 'contents` ADD `views` INT(10) DEFAULT 0;');
+		echo 0;
+		return;
+	}
+	$row = $db->fetchRow($db->select('views')->from('table.contents')->where('cid = ?', $cid));
+	if ($archive->is('single')) {
+		$views = Typecho_Cookie::get('extend_contents_views');
+		if(empty($views)){
+			$views = array();
+		}else{
+			$views = explode(',', $views);
+		}
+		if(!in_array($cid,$views)){
+			$db->query($db->update('table.contents')->rows(array('views' => (int) $row['views'] + 1))->where('cid = ?', $cid));
+			array_push($views, $cid);
+			$views = implode(',', $views);
+            Typecho_Cookie::set('extend_contents_views', $views); //记录查看cookie
+        }
+    }
+    echo $row['views'];
 }
 ?>

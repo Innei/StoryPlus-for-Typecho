@@ -7,7 +7,11 @@
 			<article class="posti" itemscope itemtype="http://schema.org/BlogPosting">
 				<h1 class="post-title" itemprop="name headline"><?php $this->title() ?></h1>
 				<div class="post-meta">
-					<p>Written by <a itemprop="name" href="<?php $this->author->permalink(); ?>" rel="author"><?php $this->author(); ?></a> with ♥ on <time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php $this->date('F j, Y'); ?></time> in <?php $this->category(', ', true, 'none'); ?></p>
+					<p>Written by <a itemprop="name" href="<?php $this->author->permalink(); ?>" rel="author"><?php $this->author(); ?></a>
+					 <?php if($this->options->showCommentNum == 'on'): echo "with ".$this->commentsNum." comment(s) on"; else: ?>
+					 	with ♥ on 
+					 <?php endif; ?>
+					 <time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php $this->date('F j, Y'); ?></time> in <?php $this->category(', ', true, 'none'); ?></p>
 				</div>
 				<?php if(time() - $this -> modified >= 2476800 && $this->options->modifiedDate == 'on'): ?>
 					<div class="modified-date">
@@ -28,6 +32,9 @@
 							</li>
 							<li>
 								<strong>修改时间：</strong><?php echo date('F j, Y',$this->modified); ?>
+							</li>
+							<li>
+								<strong>阅读次数：</strong> <?php get_post_view($this) ?>
 							</li>
 							<li>
 								<strong>本文链接：</strong>
