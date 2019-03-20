@@ -8,10 +8,11 @@
 - 网站运行时间
 - 网站shortcut_ico
 - 网站标题快速修改
-- 一言已增加(api来自https://uixsj.cn/1143.html)
+- 一言已增加
 - 增加服务器运行时间(PHP实现静态显示),可选择JS实现(动态显示)
 - 增加主题设置页面，可根据自我需要开启和关闭功能。
-- more
+- 可选评论数开关
+- 长期未修改通知
 
 修改内容
 
@@ -19,9 +20,11 @@
 - 修改了原主题的引用字体大小，一级二级标题大小
 - 删除了config.php
 
-![image-20190302182818344](https://ws3.sinaimg.cn/large/006tKfTcly1g0ommil1e3j30vy0ikmz8.jpg)
+修复
 
-![image-20190302182832490](https://ws1.sinaimg.cn/large/006tKfTcly1g0ommdsx7rj30vy0ik75l.jpg)
+- 标题无法正常显示中文字符
+
+![image-20190302182818344](https://ws3.sinaimg.cn/large/006tKfTcly1g0ommil1e3j30vy0ikmz8.jpg)
 
 Demo：[静かな森](https://shizuri.net/)
 
