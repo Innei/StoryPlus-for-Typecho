@@ -736,7 +736,11 @@ blockquote ul, blockquote ol {
 	height: 200px;
 	position: relative;
 	overflow: hidden;
-	opacity: 0;
+    opacity: 0;
+    -webkit-transition: all 2s;
+    -moz-transition: all 2s;
+    -ms-transition: all 2s;
+    -o-transition: all 2s;
 }
 .post-link .post-dec p {
 	width: 100px;
@@ -751,10 +755,10 @@ blockquote ul, blockquote ol {
 }
 .post-link .post-dec:hover {
 	opacity: 1;
-    -webkit-transition: opacity 2s;
-    -moz-transition: opacity 2s;
-    -ms-transition: opacity 2s;
-    -o-transition: opacity 2s;
+    -webkit-transition: all 2s;
+    -moz-transition: all 2s;
+    -ms-transition: all 2s;
+    -o-transition: all 2s;
 }
 .modified-date  {
     height: 50px;
