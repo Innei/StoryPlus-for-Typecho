@@ -21,7 +21,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 			<?php while($this->next()): ?>
 				<li class="post-item grid-item" itemscope itemtype="http://schema.org/BlogPosting">
 					<a class="post-link" href="<?php $this->permalink() ?>">
-						<h3 class="post-title"><time class="index-time" datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php $this->date('M j, Y'); ?></time><br><?php $this->title() ?></h3>
+						<h3 class="post-title"><time class="index-time" datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php $this->date('M j, Y'); ?></time><br><span><?php $this->title() ?></span></h3>
 						<?php if($this->options->showDec == 'on'):?>
 						<br><p class="post-dec"><?php $this->excerpt(75, '...');?></p>
 						<?php endif;?>
