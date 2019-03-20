@@ -769,3 +769,14 @@ blockquote ul, blockquote ol {
     font-style: italic;
     
 }
+
+em, mark, kbd{
+    padding: .25em .5em;
+    border-radius: .5em;
+}
+
+em{
+    color: #fff;
+    font-style: normal;
+    background: #3498db;
+}
