@@ -9,7 +9,7 @@
 				<div class="post-meta">
 					<p>Written by <a itemprop="name" href="<?php $this->author->permalink(); ?>" rel="author"><?php $this->author(); ?></a> with ♥ on <time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php $this->date('F j, Y'); ?></time> in <?php $this->category(', ', true, 'none'); ?></p>
 				</div>
-				<?php if(time() - $this -> modified >= 2476800): ?>
+				<?php if(time() - $this -> modified >= 2476800 && $this->options->modifiedDate == 'on'): ?>
 					<div class="modified-date">
 						<p>这篇文章上次修改于 <?php echo ceil((time() - $this -> modified) / 86400) ?> 天前，可能其部分内容已经发生变化，如有疑问可询问作者。</p>
 					</div>
