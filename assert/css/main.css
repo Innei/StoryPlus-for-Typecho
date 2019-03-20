@@ -747,9 +747,10 @@ blockquote ul, blockquote ol {
     -moz-opacity: 0.8; 
     opacity: 0.8; 
     padding: 20px; 
-    -webkit-transition: left 3s ease;
+    color: gray;
 }
 .post-link .post-dec:hover {
 	opacity: 1;
-	transition: opacity 2s;
+    transition: opacity 2s;
+    -webkit-transition: opactity 2s;
 }
