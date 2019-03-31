@@ -2,7 +2,7 @@
 
 原主题[Story](https://github.com/txperl/Story-for-Typecho)是一个轻量的主题，因此他会缺少很多功能（对我而言），我从hexo的next转移过来，是一个重度（不必要的功能）依赖者（划掉）。所以有了这个Story+
 
-已停止维护，迁移至 → [Magic-for-typecho](https://github.com/SorashitaInnei/Magic-for-typecho)
+已停止维护，迁移至 → [Material-Design-Story](https://github.com/SorashitaInnei/Material-Design-Story)
 
 在原主题基础上进行的修改
 
