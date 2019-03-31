@@ -32,7 +32,7 @@
 
 Demo：[静かな森](https://shizuri.net/)
 
-### 原主题Readme
+### 原作者的话
 
 -----------
 
